@@ -1,3 +1,8 @@
+# Boilerplate for Gloo
+
+Based on HTML5 BP with a few improvements we frequently use.
+
+
 # [HTML5 Boilerplate](http://html5boilerplate.com)
 
 HTML5 Boilerplate is a professional front-end template for building fast,
