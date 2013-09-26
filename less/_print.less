@@ -1,82 +1,67 @@
 /******************************************************************
-Site Name:
-Author:
-
 Stylesheet: Print Stylesheet
-
-This is the print stylesheet. There's probably not a lot
-of reasons to edit this stylesheet. If you want to
-though, go for it.
-
 ******************************************************************/
+* {
+	background: transparent !important;
+	color: #000 !important; /* Black prints faster: h5bp.com/s */
+	box-shadow: none !important;
+	text-shadow: none !important;
+}
 
+a,
+a:visited {
+	text-decoration: underline;
+}
 
+a[href]:after {
+	content: " (" attr(href) ")";
+}
 
-  * {
-    background: transparent !important;
-    color: black !important;
-    text-shadow: none !important;
-    filter:none !important;
-    -ms-filter: none !important;
-  }
+abbr[title]:after {
+	content: " (" attr(title) ")";
+}
 
-  a, a:visited {
-    color: #444 !important;
-    text-decoration: underline;
+/*
+ * Don't show links for images, or javascript/internal links
+ */
 
-    // show links on printed pages
-    &:after {
-      content: " (" attr(href) ")";
-    }
+.ir a:after,
+a[href^="javascript:"]:after,
+a[href^="#"]:after {
+	content: "";
+}
 
-    // show title too
-    abbr[title]:after {
-      content: " (" attr(title) ")";
-    }
-  }
+pre,
+blockquote {
+	border: 1px solid #999;
+	page-break-inside: avoid;
+}
 
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: "";
-  }
+thead {
+	display: table-header-group; /* h5bp.com/t */
+}
 
-  pre, blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
+tr,
+img {
+	page-break-inside: avoid;
+}
 
-  thead {
-    display: table-header-group;
-  }
+img {
+	max-width: 100% !important;
+}
 
-  tr, img {
-    page-break-inside: avoid;
-  }
+@page {
+	margin: 0.5cm;
+}
 
-  img {
-    max-width: 100% !important;
-  }
+p,
+h2,
+h3 {
+	orphans: 3;
+	widows: 3;
+}
 
-    @page {
-      margin: 0.5cm;
-    }
-
-    p, h2, h3 {
-      orphans: 3;
-      widows: 3;
-    }
-
-    h2,
-    h3 {
-      page-break-after: avoid;
-    }
-
-    // hide content people who print don't need to see
-    .sidebar,
-    .page-navigation,
-    .wp-prev-next,
-    .respond-form,
-    nav {
-      display: none;
-    }
+h2,
+h3 {
+	page-break-after: avoid;
+}

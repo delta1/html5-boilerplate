@@ -1,7 +1,4 @@
 /******************************************************************
-Site Name: 
-Author: 
-
 Stylesheet: Mixins & Constants Stylesheet
 
 This is where you can take advantage of LESS' great features: 
@@ -17,52 +14,23 @@ remember less is more.
 ******************************************************************/
 
 /*********************
-CLEARFIXIN'
-*********************/
-
-// Contain floats: nicolasgallagher.com/micro-clearfix-hack/
-.clearfix {
-  zoom: 1;
-	&:before, &:after { content: ""; display: table; }
-	&:after { clear: both; }
-}
-
-/*********************
-TOOLS
-*********************/
-
-// BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/)
-* { 
-	-webkit-box-sizing: border-box; 
-	-moz-box-sizing:    border-box; 
-	box-sizing:         border-box; 
-}
-
-// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ 
-.image-replacement {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-/*********************
 COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
 
-@alert-yellow:      #ebe16f;
-@alert-red:         #fbe3e4;
-@alert-green:       #e6efc2;
-@alert-blue:        #d5edf8;
+@alert-yellow:		#ebe16f;
+@alert-red:			#fbe3e4;
+@alert-green:		#e6efc2;
+@alert-blue:		#d5edf8;
 
 @black:             #000;
 @white:             #fff;
 
-@bones-pink:        #f01d4f;
-@bones-blue:        #1990db;
+@pink:				#f01d4f;
+@blue:				#1990db;
 
-@link-color:        @bones-pink;
+@link-color:        @pink;
 @link-hover:        darken(@link-color, 9%);
 
 /*
@@ -215,9 +183,9 @@ BUTTONS
 *********************/
 
 .button, .button:visited {
-	border: 1px solid darken(@bones-pink, 13%);
-	border-top-color: darken(@bones-pink, 7%);
-	border-left-color: darken(@bones-pink, 7%);
+	border: 1px solid darken(@pink, 13%);
+	border-top-color: darken(@pink, 7%);
+	border-left-color: darken(@pink, 7%);
 	padding: 4px 12px;
 	color: @white;
 	display: inline-block;
@@ -230,33 +198,35 @@ BUTTONS
 	line-height: 21px;
 	.transition();
 	.border-radius(4px);
-	.css-gradient(@bones-pink,darken(@bones-pink, 5%));
+	.css-gradient(@pink,darken(@pink, 5%));
 
 	&:hover, &:focus {
 		color: @white;
-	  border: 1px solid darken(@bones-pink, 13%);
-	  border-top-color: darken(@bones-pink, 20%);
-	 	border-left-color: darken(@bones-pink, 20%);
-		.css-gradient(darken(@bones-pink, 5%),darken(@bones-pink, 10%));
+	  border: 1px solid darken(@pink, 13%);
+	  border-top-color: darken(@pink, 20%);
+	 	border-left-color: darken(@pink, 20%);
+		.css-gradient(darken(@pink, 5%),darken(@pink, 10%));
 	}
 	
 	&:active {
-		.css-gradient(darken(@bones-pink, 5%),@bones-pink);
+		.css-gradient(darken(@pink, 5%),@pink);
 	}	
 }
 
 .blue-button, .blue-button:visited {
-	border-color: darken(@bones-blue, 10%);
-	text-shadow: 0 1px 1px darken(@bones-blue, 10%);
-	.css-gradient( @bones-blue, darken(@bones-blue, 5%) );
-	-webkit-box-shadow: inset 0 0 3px lighten(@bones-blue, 16%);
-       -moz-box-shadow: inset 0 0 3px lighten(@bones-blue, 16%);
-   	        box-shadow: inset 0 0 3px lighten(@bones-blue, 16%);
+	border-color: darken(@blue, 10%);
+	text-shadow: 0 1px 1px darken(@blue, 10%);
+	.css-gradient( @blue, darken(@blue, 5%) );
+	-webkit-box-shadow: inset 0 0 3px lighten(@blue, 16%);
+       -moz-box-shadow: inset 0 0 3px lighten(@blue, 16%);
+   	        box-shadow: inset 0 0 3px lighten(@blue, 16%);
 	&:hover, &:focus {
-		border-color: darken(@bones-blue, 15%);
-		.css-gradient( darken(@bones-blue, 4%), darken(@bones-blue, 10%) );
+		border-color: darken(@blue, 15%);
+		.css-gradient( darken(@blue, 4%), darken(@blue, 10%) );
 	}
 	&:active {
-		.css-gradient( darken(@bones-blue, 5%), @bones-blue );
+		.css-gradient( darken(@blue, 5%), @blue );
 	}
 }
+
+
