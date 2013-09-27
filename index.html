@@ -36,10 +36,11 @@
 			Modernizr.load([
 				{
 					test: window.matchMedia,
-					nope: "js/libs/media.match.min.js"
+					nope: [ "js/libs/media.match.min.js", "js/libs/respond.min.js" ]
 				},
 
-				"js/libs/enquire.min.js",
+				"js/libs/enquire.min.js",	// Responsive JS - attached to MediaQueries
+				"js/libs/cssua.min.js",		// Adds specific UA classes to the <html> tag - remove if not needed
 				"js/plugins.js",
 				"js/main.js"
 			]);
